@@ -1,0 +1,5 @@
+{
+  "watch": ["src", "prisma"],
+  "ext": "ts,tsx",
+  "exec": "clear && npm run dev:nowatch"
+}

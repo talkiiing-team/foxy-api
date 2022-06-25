@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "strict": true,
+    "baseUrl": ".",
+    "downlevelIteration": true,
+    "target": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es2018", "esnext.asynciterable"],
+    "types": ["vite/client"],
+    "jsx": "react",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "outDir": "dist"
+  },
+  "include": ["src/**/*.ts"],
+  "ts-node": {
+    "typeCheck": false,
+    "transpileOnly": true
+  }
+}
