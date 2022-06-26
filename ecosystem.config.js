@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'circles-essentials-bot',
+      name: 'foxy-api',
       script: './dist/index.js',
       instances: 1,
     },

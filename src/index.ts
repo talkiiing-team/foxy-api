@@ -1,20 +1,13 @@
 import 'reflect-metadata'
-import { Field, ID, ObjectType } from 'type-graphql'
+import { appContainer } from '@/infrastructure/container'
+import { createExpressApp } from '@/infrastructure/express/app'
+;(async () => {
+  // TODO: wrap in fastify for REST manipulations
+  // like image uploading
+  const app = await createExpressApp(appContainer)
 
-@ObjectType()
-class Recipe {
-  @Field(type => ID)
-  id!: string
-
-  @Field()
-  title!: string
-
-  @Field({ nullable: true })
-  description?: string
-
-  @Field()
-  creationDate!: Date
-
-  @Field(type => [String])
-  ingredients!: string[]
-}
+  app.listen(3030, () => {
+    console.log('Listening on | http://localhost:3030')
+    console.log('     Graphql | http://localhost:3030/gql')
+  })
+})()
